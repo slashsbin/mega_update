@@ -1,0 +1,10 @@
+---
+
+- name: Import tasks
+  import_tasks:
+    - composer.yaml
+    - npm.yaml
+    - task: homebrew.yaml
+      when: 'ansible_os_family == "Darwin"'
+    - task: osx.yaml
+      when: 'ansible_os_family == "Darwin"'

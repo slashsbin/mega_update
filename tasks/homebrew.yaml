@@ -1,0 +1,31 @@
+---
+
+- name: homebrew - fetch the newest version of homebrew and all formulae
+  tags:
+    - homebrew
+  homebrew:
+    update_homebrew: yes
+
+- name: homebrew - upgrade outdated and unpinned brews
+  tags:
+    - homebrew
+  homebrew:
+    upgrade_all: yes
+
+- name: homebrew cask - upgrade all outdated casks
+  tags:
+    - homebrew
+  homebrew_cask:
+    upgrade_all: yes
+
+- name: homebrew cleanup - remove outdated downloads
+  tags:
+    - homebrew
+    - cleanup
+  command: brew cleanup
+
+- name: homebrew prune - remove dead symlinks
+  tags:
+    - homebrew
+    - cleanup
+  command: brew prune

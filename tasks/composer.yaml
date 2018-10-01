@@ -1,0 +1,14 @@
+---
+
+- name: composer - Update composer itself to the latest version
+  tags:
+    - composer
+  composer:
+    command: self-update
+
+- name: composer - Upgrade global composer packages
+  tags:
+    - composer
+  composer:
+    command: update
+    global_command: yes
