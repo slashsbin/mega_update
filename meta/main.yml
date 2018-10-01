@@ -1,0 +1,17 @@
+galaxy_info:
+  author: slashsbin
+  description: Probe and update all packages, development tools and dependencies
+
+  license: license (MIT)
+
+  min_ansible_version: 2.6
+
+  platforms:
+    - name: GenericUNIX
+      versions:
+        - all
+
+  galaxy_tags:
+    - development
+
+dependencies: []
