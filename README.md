@@ -5,7 +5,7 @@
 Mega-Update
 ===========
 
-TODO: A brief description of the role goes here.
+Probe and update all packages, development tools and dependencies.
 
 Requirements
 ------------
@@ -25,13 +25,28 @@ None.
 Example Playbook
 ----------------
 
+Add mega-update role to your playbook:
+
 ```yaml
-- hosts: servers
-      roles:
-         - { role: slashsbin.mega_update }
+- hosts: your-servers
+  roles:
+     - { role: slashsbin.mega-update }
+```
+
+Tests
+-----
+
+Run Tests:
+
+```bash
+ansible-playbook -i tests/inventory tests/test.yml --check
 ```
 
 License
 -------
 
 The Code is licensed under the [MIT License](https://slashsbin.mit-license.org/).
+
+## Author Information
+
+This role was created in 2018 by [Mohammad Shokri Khanghah](https://slashsbin.com/).

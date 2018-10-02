@@ -10,8 +10,22 @@ galaxy_info:
     - name: GenericUNIX
       versions:
         - all
+    - name: GenericLinux
+      versions:
+        - all
+    - name: GenericBSD
+      versions:
+        - all
+    - name: macOS
+      versions:
+        - all
 
   galaxy_tags:
+    - system
     - development
+    - packaging
+    - packages
+    - update
+    - upgrade
 
 dependencies: []
