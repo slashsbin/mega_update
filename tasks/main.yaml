@@ -1,0 +1,15 @@
+---
+
+- name: Import Composer Tasks
+  import_tasks: composer.yaml
+
+- name: Import NPM Tasks
+  import_tasks: npm.yaml
+
+- name: Import HomeBrew Tasks
+  import_tasks: homebrew.yaml
+  when: 'ansible_os_family == "Darwin"'
+
+- name: Import OSX Tasks
+  import_tasks: osx.yaml
+  when: 'ansible_os_family == "Darwin"'
