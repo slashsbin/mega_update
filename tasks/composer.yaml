@@ -5,6 +5,7 @@
     - composer
   composer:
     command: self-update
+    global_command: yes
 
 - name: composer - Upgrade global composer packages
   tags:
