@@ -2,7 +2,7 @@ galaxy_info:
   author: slashsbin
   description: Probe and update all packages, development tools and dependencies
 
-  license: license (MIT)
+  license: MIT
 
   min_ansible_version: 2.6
 

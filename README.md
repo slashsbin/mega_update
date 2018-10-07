@@ -4,7 +4,7 @@ Mega-Update
 Probe and update all packages, development tools and dependencies. Currently supports:
 
 - **Composer** itself and global composer packages
-- *Homebrew** itself, brewed bundles and casks
+- **Homebrew** itself, brewed bundles and casks
 - **NPM** itself, and global npm packages
 - **OSX app updates** via MacOS official system software update tool cli
 
