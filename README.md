@@ -11,6 +11,7 @@ One Ansible role to update them all.
 Supports
 --------
 - [X] **APT**: Debian Package Manager
+      Tags: `apt`, `cleanup`
 - [ ] **ClamAV**
 - [X] **Composer**: itself and global composer packages
 - [X] **Docker**: Pull all local images
@@ -63,13 +64,39 @@ An example how to include this role:
      - { role: slashsbin.mega_update }
 ```
 
-Local Usage
------------
+Example Local Usages
+--------------------
+
+### Run Mega Update, Updating everything supported
 
 Clone the project and execute:
 
 ```bash
+ansible-playbook --inventory tests/inventory tests/test.yml --verbose
+```
+
+or, simply use the make recipe:
+
+```bash
 make run
+```
+
+### List all supported tasks and their tags
+
+```bash
+make list-tasks
+```
+
+### Update APT packages only
+
+```bash
+ansible-playbook --inventory tests/inventory tests/test.yml --tags apt --verbose
+```
+
+### Update APT packages only, without running cleanup tasks
+
+```bash
+ansible-playbook --inventory tests/inventory tests/test.yml --tags apt --skip-tags cleanup --verbose
 ```
 
 Tests

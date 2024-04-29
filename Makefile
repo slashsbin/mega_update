@@ -23,21 +23,29 @@ help:  ## Display this help
 ##@ [App]
 .PHONY: dry-run
 dry-run:  ## Run Mega Update locally (Dry-Run mode, don't make any changes)
-	ansible-playbook -i tests/inventory tests/test.yml --check
+	ansible-playbook --inventory tests/inventory tests/test.yml --check
 
 .PHONY: run
 run:  ## Run Mega Update locally
-	ansible-playbook -i tests/inventory tests/test.yml -v
+	ansible-playbook --inventory tests/inventory tests/test.yml --verbose
 
-.PHONY: lint
-lint:  ## Lint the project
-	ansible-playbook -i tests/inventory tests/test.yml --syntax-check
-	ansible-lint
+.PHONY: list-tasks
+list-tasks:  ## List supported tasks and their tags
+	ansible-playbook --inventory tests/inventory tests/test.yml --list-tasks
+
+.PHONY: list-tags
+list-tags:  ## List all supported tags
+	ansible-playbook --inventory tests/inventory tests/test.yml --list-tags
 
 ##@ [Contribution]
+.PHONY: lint
+lint:  ## Lint the project
+	ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
+	ansible-lint
+
 .PHONY: ansible-facts
 ansible-facts:  ## Print Ansible Facts
-	ansible localhost -m ansible.builtin.setup
+	ansible localhost --module-name ansible.builtin.setup
 
 .PHONY: galaxy-Update
 galaxy-update:  ## Update role on Ansible Galaxy
