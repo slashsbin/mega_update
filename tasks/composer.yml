@@ -9,7 +9,7 @@
     verbosity: 1
 
 - name: composer - update composer itself to the latest version
-  composer:
+  community.general.composer:
     command: self-update
     global_command: yes
 
@@ -33,7 +33,7 @@
   when: mega_update_composer_global_home is defined
 
 - name: composer - upgrade global composer packages
-  composer:
+  community.general.composer:
     command: update
     global_command: yes
   when: mega_update_composer_global_dependencies.stat.exists

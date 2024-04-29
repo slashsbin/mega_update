@@ -13,7 +13,8 @@ Supports
 - [X] **APT**: Update all Debian packages to the latest version
       Tags: `apt`, `cleanup`
 - [ ] **ClamAV**
-- [X] **Composer**: itself and global composer packages
+- [X] **Composer**: Update [composer](https://getcomposer.org/) executable and globally installed packages
+      Tags: `composer`
 - [X] **Docker**: Pull all local images
 - [ ] **Exercism CLI**
 - [ ] **Go**
@@ -31,7 +32,8 @@ Requirements
 List of used Ansible modules:
 
 - `ansible.builtin.apt`
-- composer
+- `ansible.builtin.command`
+- `community.general.composer`
 - homebrew
 - homebrew_cask
 - npm
