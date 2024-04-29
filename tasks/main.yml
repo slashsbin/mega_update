@@ -8,7 +8,7 @@
   when: 'ansible_os_family == "Debian"'
 
 # Composer
-- name: composer - determine composer executable path
+- name: Composer - determine composer executable path
   ignore_errors: true
   tags:
     - composer
@@ -25,7 +25,7 @@
   when: mega_update_composer is succeeded
 
 # Docker
-- name: docker - gather facts on docker host
+- name: Docker - gather facts on docker host
   tags:
     - docker
   community.docker.docker_host_info:
@@ -38,7 +38,7 @@
   when: 'not mega_update_docker_host.failed'
 
 # HomeBrew
-- name: homebrew - determine homebrew executable path
+- name: Homebrew - determine homebrew executable path
   ignore_errors: true
   tags:
     - homebrew
@@ -55,7 +55,7 @@
   when: mega_update_homebrew is succeeded
 
 # NPM
-- name: npm - determine npm executable path
+- name: NPM - determine npm executable path
   ignore_errors: true
   tags:
     - npm

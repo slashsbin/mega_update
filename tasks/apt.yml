@@ -1,27 +1,27 @@
 ---
 
-- name: apt - update package information
+- name: APT - update package information
   ansible.builtin.apt:
-    update_cache: yes
+    update_cache: true
   become: true
   ignore_errors: true
 
-- name: apt - update all packages to the latest version
+- name: APT - update all packages to the latest version
   ansible.builtin.apt:
     name: "*"
     state: latest
   become: true
 
-- name: apt - remove useless packages from the cache
+- name: APT - remove useless packages from the cache
   tags:
     - cleanup
   ansible.builtin.apt:
-    autoclean: yes
+    autoclean: true
   become: true
 
-- name: apt - remove dependencies that are no longer required
+- name: APT - remove dependencies that are no longer required
   tags:
     - cleanup
   ansible.builtin.apt:
-    autoremove: yes
+    autoremove: true
   become: true

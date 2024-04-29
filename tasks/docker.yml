@@ -1,19 +1,19 @@
 ---
 
-- name: docker - gather local images facts
+- name: Docker - gather local images facts
   community.docker.docker_image_info:
   register: mega_update_docker_images
 
-- name: docker - pull images
+- name: Docker - pull images
   community.docker.docker_image:
     name: '{{ item.RepoTags.0 }}'
     source: pull
     state: present
-    force_source: yes
+    force_source: true
   with_items: '{{ mega_update_docker_images.images }}'
   when: 'item.RepoTags.0 is defined'
 
-- name: docker - prune images
+- name: Docker - prune images
   tags:
     - cleanup
   ansible.builtin.command: docker image prune -f

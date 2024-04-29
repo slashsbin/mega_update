@@ -1,6 +1,6 @@
 ---
 
-- name: composer - debug composer executable path
+- name: Composer - debug composer executable path
   tags:
     - never
     - debug
@@ -9,12 +9,12 @@
       - 'composer executable path: {{ mega_update_composer.stdout }}'
     verbosity: 0
 
-- name: composer - update composer itself to the latest version
+- name: Composer - update composer itself to the latest version
   community.general.composer:
     command: self-update
-    global_command: yes
+    global_command: true
 
-- name: composer - determine composer global home path
+- name: Composer - determine composer global home path
   ignore_errors: true
   ansible.builtin.command:
     argv:
@@ -26,17 +26,17 @@
   register: mega_update_composer_global_home
   when: mega_update_composer is succeeded
 
-- name: composer - check composer global dependencies file exists
+- name: Composer - check composer global dependencies file exists
   ignore_errors: true
   ansible.builtin.stat:
-    path: '{{ mega_update_composer_global_home}}/composer.json'
+    path: '{{ mega_update_composer_global_home }}/composer.json'
   register: mega_update_composer_global_dependencies
   when: mega_update_composer_global_home is defined
 
-- name: composer - upgrade global composer packages
+- name: Composer - upgrade global composer packages
   community.general.composer:
     command: update
-    global_command: yes
+    global_command: true
   when:
     - mega_update_composer_global_dependencies.stat is defined
     - mega_update_composer_global_dependencies.stat.exists

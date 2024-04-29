@@ -1,18 +1,18 @@
 ---
 
-- name: homebrew - fetch the newest version of homebrew and all formulae
+- name: Homebrew - fetch the newest version of homebrew and all formulae
   community.general.homebrew:
-    update_homebrew: yes
+    update_homebrew: true
 
-- name: homebrew - upgrade outdated and unpinned brews
+- name: Homebrew - upgrade outdated and unpinned brews
   community.general.homebrew:
-    upgrade_all: yes
+    upgrade_all: true
 
-- name: homebrew cask - upgrade all outdated casks
+- name: Homebrew cask - upgrade all outdated casks
   community.general.homebrew_cask:
-    upgrade_all: yes
+    upgrade_all: true
 
-- name: homebrew - remove outdated downloads
+- name: Homebrew - remove outdated downloads
   tags:
     - cleanup
   ansible.builtin.command:
