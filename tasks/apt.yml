@@ -6,9 +6,10 @@
   become: true
   ignore_errors: true
 
-- name: apt - upgrade all packages to the latest version
+- name: apt - update all packages to the latest version
   ansible.builtin.apt:
-    upgrade: dist
+    name: "*"
+    state: latest
   become: true
 
 - name: apt - remove useless packages from the cache
