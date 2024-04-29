@@ -1,12 +1,6 @@
 ---
 
-- name: npm - upgrade npm to the latest version
-  npm:
-    name: npm
-    global: yes
-    state: latest
-
 - name: npm - upgrade npm global packages
-  npm:
+  community.general.npm:
     global: yes
     state: latest

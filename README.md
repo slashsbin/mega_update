@@ -20,7 +20,9 @@ Supports
 - [ ] **Exercism CLI**
 - [ ] **Go**
 - [X] **Homebrew**: Upgrade outdated [brews](https://brew.sh/) and casks.
-- [X] **NPM**: itself, and global npm packages
+      Tags: `homebrew`, `cleanup`
+- [X] **NPM**: Upgrade globally installed [npm](https://nodejs.org/) packages.
+      Tags: `npm`
 - [X] **OSX app updates**: via MacOS official system software update tool cli
 - [ ] **RKHunter**
 - [ ] **Rust**: Rust toolchain and globally installed cargo packages.
@@ -34,13 +36,13 @@ List of used Ansible modules:
 
 - `ansible.builtin.apt`
 - `ansible.builtin.command`
-- `community.general.composer`
 - `community.docker.docker_host_info`
 - `community.docker.docker_image_info`
 - `community.docker.docker_image`
-- `community.general.homebrew`
+- `community.general.composer`
 - `community.general.homebrew_cask`
-- npm
+- `community.general.homebrew`
+- `community.general.npm`
 
 Role Variables
 --------------

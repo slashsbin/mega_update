@@ -55,10 +55,21 @@
   when: mega_update_homebrew is succeeded
 
 # NPM
+- name: npm - determine npm executable path
+  ignore_errors: true
+  tags:
+    - npm
+  command:
+    argv:
+      - which
+      - npm
+  register: mega_update_npm
+
 - name: Import NPM Tasks
   tags:
-    - node
+    - npm
   import_tasks: npm.yml
+  when: mega_update_npm is succeeded
 
 # OSX
 - name: Import OSX Tasks
