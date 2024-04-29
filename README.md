@@ -37,6 +37,8 @@ List of used Ansible modules:
 
 - `ansible.builtin.apt`
 - `ansible.builtin.command`
+- `ansible.builtin.debug`
+- `ansible.builtin.stat`
 - `community.docker.docker_host_info`
 - `community.docker.docker_image_info`
 - `community.docker.docker_image`
