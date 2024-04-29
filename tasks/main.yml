@@ -1,0 +1,60 @@
+---
+
+# OSX
+- name: Import OSX Tasks
+  tags:
+    - osx
+  import_tasks: osx.yml
+  when: 'ansible_os_family == "Darwin"'
+
+# HomeBrew
+- name: homebrew - determine homebrew executable path
+  ignore_errors: true
+  tags:
+    - homebrew
+  command:
+    argv:
+      - which
+      - brew
+  register: mega_update_homebrew
+
+- name: Import HomeBrew Tasks
+  import_tasks: homebrew.yml
+  when: mega_update_homebrew is succeeded
+
+# APT
+- name: Import APT Tasks
+  tags:
+    - apt
+  import_tasks: apt.yml
+  when: 'ansible_os_family == "Debian"'
+
+# Docker
+- name: docker - gather facts on docker host
+  tags:
+    - docker
+  docker_host_info:
+  register: mega_update_docker_host
+
+- name: Import Docker Tasks
+  tags:
+    - docker
+  import_tasks: docker.yml
+  when: 'not mega_update_docker_host.failed'
+
+# Composer
+- name: composer - determine composer executable path
+  ignore_errors: true
+  tags:
+    - composer
+  command:
+    argv:
+      - which
+      - composer
+  register: mega_update_composer
+
+- name: Import Composer Tasks
+  tags:
+    - composer
+  import_tasks: composer.yml
+  when: mega_update_composer is succeeded

@@ -1,7 +1,5 @@
 ---
 
-- name: OSX
-  tags:
-    - osx
+- name: osx - software update
   command: softwareupdate --install --all
   become: true

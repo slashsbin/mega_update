@@ -1,12 +1,28 @@
-Mega-Update
+<p align="center">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/slashsbin/mega_update/ansible-lint">
+    <img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/slashsbin/mega_update">
+</p>
+
+Mega Update
 ===========
 
-Probe and update all packages, development tools and dependencies. Currently supports:
+One Ansible role to update them all.
 
-- **Composer** itself and global composer packages
-- **Homebrew** itself, brewed bundles and casks
-- **NPM** itself, and global npm packages
-- **OSX app updates** via MacOS official system software update tool cli
+Supports
+--------
+- [X] **APT**: Debian Package Manager
+- [ ] **ClamAV**
+- [X] **Composer**: itself and global composer packages
+- [X] **Docker**: Pull all local images
+- [ ] **Exercism CLI**
+- [ ] **Go**
+- [X] **Homebrew**: itself, brewed bundles and casks
+- [X] **NPM**: itself, and global npm packages
+- [X] **OSX app updates**: via MacOS official system software update tool cli
+- [ ] **RKHunter**
+- [ ] **Rust**: Rust toolchain and globally installed cargo packages.
+- [ ] **Snaps**: Referesh all installed Snaps
+- [ ] **Symfony CLI**
 
 Requirements
 ------------
@@ -28,24 +44,40 @@ Dependencies
 
 None.
 
+Install
+-------
+
+```bash
+ansible-galaxy role install slashsbin.mega_update
+```
+
 Example Playbook
 ----------------
 
-Add mega-update role to your playbook:
+An example how to include this role:
 
 ```yaml
 - hosts: your-servers
   roles:
-     - { role: slashsbin.mega-update }
+     - { role: slashsbin.mega_update }
+```
+
+Local Usage
+-----------
+
+Clone the project and execute:
+
+```bash
+make run
 ```
 
 Tests
 -----
 
-Run Tests:
+Run Ansible syntax check and lint:
 
 ```bash
-ansible-playbook -i tests/inventory tests/test.yml --check
+make lint
 ```
 
 License
@@ -53,6 +85,7 @@ License
 
 The Code is licensed under the [MIT License](https://slashsbin.mit-license.org/).
 
-## Author Information
+Author Information
+------------------
 
-This role was created in 2018 by [Mohammad Shokri Khanghah](https://slashsbin.com/).
+This role was created by [Mohammad Shokri Khanghah](https://slashsbin.dev/).

@@ -1,0 +1,26 @@
+---
+
+- name: apt - update package information
+  apt:
+    update_cache: true
+  become: true
+  ignore_errors: true
+
+- name: apt - upgrade all packages to the latest version
+  apt:
+    upgrade: dist
+  become: true
+
+- name: apt - remove useless packages from the cache
+  tags:
+    - cleanup
+  apt:
+    autoclean: yes
+  become: true
+
+- name: apt - remove dependencies that are no longer required
+  tags:
+    - cleanup
+  apt:
+    autoremove: yes
+  become: true
