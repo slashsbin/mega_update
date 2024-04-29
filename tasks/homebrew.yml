@@ -15,7 +15,7 @@
 - name: homebrew - remove outdated downloads
   tags:
     - cleanup
-  command:
+  ansible.builtin.command:
     argv:
       - '{{ mega_update_homebrew.stdout }}'
       - cleanup

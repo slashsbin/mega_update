@@ -16,4 +16,4 @@
 - name: docker - prune images
   tags:
     - cleanup
-  command: docker image prune -f
+  ansible.builtin.command: docker image prune -f

@@ -10,12 +10,12 @@
 
 - name: composer - update composer itself to the latest version
   community.general.composer:
-    command: self-update
+    ansible.builtin.command: self-update
     global_command: yes
 
 - name: composer - determine composer global home path
   ignore_errors: true
-  command:
+  ansible.builtin.command:
     argv:
       - '{{ mega_update_composer.stdout }}'
       - config

@@ -1,5 +1,5 @@
 ---
 
 - name: osx - software update
-  command: softwareupdate --install --all
+  ansible.builtin.command: softwareupdate --install --all
   become: true

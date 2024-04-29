@@ -12,7 +12,7 @@
   ignore_errors: true
   tags:
     - composer
-  command:
+  ansible.builtin.command:
     argv:
       - which
       - composer
@@ -42,7 +42,7 @@
   ignore_errors: true
   tags:
     - homebrew
-  command:
+  ansible.builtin.command:
     argv:
       - which
       - brew
@@ -59,7 +59,7 @@
   ignore_errors: true
   tags:
     - npm
-  command:
+  ansible.builtin.command:
     argv:
       - which
       - npm
