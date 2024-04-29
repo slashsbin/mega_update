@@ -2,8 +2,9 @@
 
 - name: composer - debug composer executable path
   tags:
-    - composer
-  debug:
+    - never
+    - debug
+  ansible.builtin.debug:
     msg:
       - 'composer executable path: {{ mega_update_composer.stdout }}'
     verbosity: 0
