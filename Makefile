@@ -23,7 +23,7 @@ help:  ## Display this help
 ##@ [App]
 .PHONY: dry-run
 dry-run:  ## Run Mega Update locally (Dry-Run mode, don't make any changes)
-	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check
+	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check --diff
 
 .PHONY: run
 run:  ## Run Mega Update locally
