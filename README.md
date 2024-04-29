@@ -23,7 +23,8 @@ Supports
       Tags: `homebrew`, `cleanup`
 - [X] **NPM**: Upgrade globally installed [npm](https://nodejs.org/) packages.
       Tags: `npm`
-- [X] **OSX app updates**: via MacOS official system software update tool cli
+- [X] **OSX app updates**: Update MacOS apps via the official system software update tool cli.
+      Tags: `osx`
 - [ ] **RKHunter**
 - [ ] **Rust**: Rust toolchain and globally installed cargo packages.
 - [ ] **Snaps**: Referesh all installed Snaps
