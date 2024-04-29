@@ -49,10 +49,15 @@
   register: mega_update_homebrew
 
 - name: Import HomeBrew Tasks
+  tags:
+    - homebrew
   import_tasks: homebrew.yml
   when: mega_update_homebrew is succeeded
 
+# NPM
 - name: Import NPM Tasks
+  tags:
+    - node
   import_tasks: npm.yml
 
 # OSX

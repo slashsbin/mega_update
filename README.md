@@ -15,11 +15,11 @@ Supports
 - [ ] **ClamAV**
 - [X] **Composer**: Update [Composer](https://getcomposer.org/) executable and globally installed packages.
       Tags: `composer`
-- [X] **Docker**: Pull latest version of Docker images from repositories.
+- [X] **Docker**: Pull latest version of [Docker](https://www.docker.com/) images from repositories.
       Tags: `docker`, `cleanup`
 - [ ] **Exercism CLI**
 - [ ] **Go**
-- [X] **Homebrew**: itself, brewed bundles and casks
+- [X] **Homebrew**: Upgrade outdated [brews](https://brew.sh/) and casks.
 - [X] **NPM**: itself, and global npm packages
 - [X] **OSX app updates**: via MacOS official system software update tool cli
 - [ ] **RKHunter**
@@ -38,8 +38,8 @@ List of used Ansible modules:
 - `community.docker.docker_host_info`
 - `community.docker.docker_image_info`
 - `community.docker.docker_image`
-- homebrew
-- homebrew_cask
+- `community.general.homebrew`
+- `community.general.homebrew_cask`
 - npm
 
 Role Variables

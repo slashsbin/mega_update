@@ -1,16 +1,12 @@
 ---
 
 - name: npm - upgrade npm to the latest version
-  tags:
-    - node
   npm:
     name: npm
     global: yes
     state: latest
 
 - name: npm - upgrade npm global packages
-  tags:
-    - node
   npm:
     global: yes
     state: latest

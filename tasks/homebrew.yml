@@ -1,25 +1,21 @@
 ---
 
 - name: homebrew - fetch the newest version of homebrew and all formulae
-  tags:
-    - homebrew
-  homebrew:
+  community.general.homebrew:
     update_homebrew: yes
 
 - name: homebrew - upgrade outdated and unpinned brews
-  tags:
-    - homebrew
-  homebrew:
+  community.general.homebrew:
     upgrade_all: yes
 
 - name: homebrew cask - upgrade all outdated casks
-  tags:
-    - homebrew
-  homebrew_cask:
+  community.general.homebrew_cask:
     upgrade_all: yes
 
 - name: homebrew - remove outdated downloads
   tags:
-    - homebrew
     - cleanup
-  command: brew cleanup
+  command:
+    argv:
+      - '{{ mega_update_homebrew.stdout }}'
+      - cleanup
