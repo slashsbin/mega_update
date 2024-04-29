@@ -83,7 +83,7 @@ Example Local Usages
 Clone the project and execute:
 
 ```bash
-ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --verbose
+ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml
 ```
 
 or, simply use the make recipe:
@@ -101,13 +101,13 @@ make list-tasks
 ### Update APT packages only
 
 ```bash
-ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags apt --verbose
+ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags apt
 ```
 
 ### Update APT packages only, without running cleanup tasks
 
 ```bash
-ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags apt --skip-tags cleanup --verbose
+ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags apt --skip-tags cleanup
 ```
 
 Tests

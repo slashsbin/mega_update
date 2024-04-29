@@ -23,11 +23,11 @@ help:  ## Display this help
 ##@ [App]
 .PHONY: dry-run
 dry-run:  ## Run Mega Update locally (Dry-Run mode, don't make any changes)
-	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check --diff
+	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check --diff --verbose
 
 .PHONY: run
 run:  ## Run Mega Update locally
-	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --verbose
+	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml
 
 .PHONY: list-tasks
 list-tasks:  ## List supported tasks and their tags
