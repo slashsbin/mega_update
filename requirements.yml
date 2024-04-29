@@ -2,3 +2,4 @@
 # This is used during checking the project using ansible-lint
 collections:
   - community.general
+  - community.docker

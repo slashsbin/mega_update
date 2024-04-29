@@ -1,11 +1,11 @@
 ---
 
 - name: docker - gather local images facts
-  docker_image_info:
+  community.docker.docker_image_info:
   register: mega_update_docker_images
 
 - name: docker - pull images
-  docker_image:
+  community.docker.docker_image:
     name: '{{ item.RepoTags.0 }}'
     source: pull
     state: present

@@ -28,7 +28,7 @@
 - name: docker - gather facts on docker host
   tags:
     - docker
-  docker_host_info:
+  community.docker.docker_host_info:
   register: mega_update_docker_host
 
 - name: Import Docker Tasks

@@ -16,6 +16,7 @@ Supports
 - [X] **Composer**: Update [composer](https://getcomposer.org/) executable and globally installed packages
       Tags: `composer`
 - [X] **Docker**: Pull all local images
+      Tags: `docker`, `cleanup`
 - [ ] **Exercism CLI**
 - [ ] **Go**
 - [X] **Homebrew**: itself, brewed bundles and casks
@@ -34,6 +35,9 @@ List of used Ansible modules:
 - `ansible.builtin.apt`
 - `ansible.builtin.command`
 - `community.general.composer`
+- `community.docker.docker_host_info`
+- `community.docker.docker_image_info`
+- `community.docker.docker_image`
 - homebrew
 - homebrew_cask
 - npm
