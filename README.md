@@ -10,12 +10,12 @@ One Ansible role to update them all.
 
 Supports
 --------
-- [X] **APT**: Update all Debian packages to the latest version
+- [X] **APT**: Update all Debian packages to the latest version.
       Tags: `apt`, `cleanup`
 - [ ] **ClamAV**
-- [X] **Composer**: Update [composer](https://getcomposer.org/) executable and globally installed packages
+- [X] **Composer**: Update [Composer](https://getcomposer.org/) executable and globally installed packages.
       Tags: `composer`
-- [X] **Docker**: Pull all local images
+- [X] **Docker**: Pull latest version of Docker images from repositories.
       Tags: `docker`, `cleanup`
 - [ ] **Exercism CLI**
 - [ ] **Go**
