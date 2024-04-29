@@ -36,4 +36,6 @@
   community.general.composer:
     command: update
     global_command: yes
-  when: mega_update_composer_global_dependencies.stat.exists
+  when:
+    - mega_update_composer_global_dependencies.stat is defined
+    - mega_update_composer_global_dependencies.stat.exists

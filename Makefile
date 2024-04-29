@@ -23,7 +23,7 @@ help:  ## Display this help
 ##@ [App]
 .PHONY: dry-run
 dry-run:  ## Run Mega Update locally (Dry-Run mode, don't make any changes)
-	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check --diff --verbose
+	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check
 
 .PHONY: run
 run:  ## Run Mega Update locally
@@ -46,6 +46,10 @@ lint:  ## Lint the project
 .PHONY: ansible-facts
 ansible-facts:  ## Print Ansible Facts
 	ansible localhost --module-name ansible.builtin.setup
+
+.PHONY: debug-run
+debug-run:  ## Run Mega Update locally (Debug mode, don't make any changes)
+	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check --diff --verbose
 
 .PHONY: galaxy-Update
 galaxy-update:  ## Update role on Ansible Galaxy
