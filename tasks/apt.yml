@@ -10,6 +10,7 @@
   ansible.builtin.apt:
     name: "*"
     state: latest
+    only_upgrade: true # Upgrades but does not install additional packages.
   become: true
 
 - name: APT - remove useless packages from the cache
