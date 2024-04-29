@@ -29,6 +29,7 @@ Requirements
 
 List of used Ansible modules:
 
+- `ansible.builtin.apt`
 - composer
 - homebrew
 - homebrew_cask
