@@ -35,6 +35,10 @@ lint:  ## Lint the project
 	ansible-lint
 
 ##@ [Contribution]
+.PHONY: ansible-facts
+ansible-facts:  ## Print Ansible Facts
+	ansible localhost -m ansible.builtin.setup
+
 .PHONY: galaxy-Update
 galaxy-update:  ## Update role on Ansible Galaxy
 	ansible-galaxy role import slashsbin mega_update
