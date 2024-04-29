@@ -10,7 +10,7 @@ One Ansible role to update them all.
 
 Supports
 --------
-- [X] **APT**: Debian Package Manager
+- [X] **APT**: Update all Debian packages to the latest version
       Tags: `apt`, `cleanup`
 - [ ] **ClamAV**
 - [X] **Composer**: itself and global composer packages
