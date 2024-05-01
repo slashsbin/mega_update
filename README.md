@@ -1,6 +1,6 @@
 <p align="center">
-    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/slashsbin/mega_update/ansible-lint.yml">
     <img alt="Ansible Role" src="https://img.shields.io/ansible/role/d/slashsbin/mega_update">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/slashsbin/mega_update/ansible-lint.yml">
 </p>
 
 Mega Update
