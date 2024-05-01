@@ -28,7 +28,10 @@
 
 - name: Rust - filter command output
   ansible.builtin.set_fact:
-    mega_update_rust_cargos: '{{ mega_update_rust_cargos.stdout_lines | json_query("[::2]") | map("split", " ") | map("first") }}' # [::2]: Starting from index zero, choose every 2nd item
+    mega_update_rust_cargos: >
+      {{ mega_update_rust_cargos.stdout_lines
+        | json_query("[::2]")
+        | map("split", " ") | map("first") }}
 
 - name: Rust - update all installed cargos
   community.general.cargo:
