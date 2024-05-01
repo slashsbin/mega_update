@@ -1,0 +1,39 @@
+---
+
+- name: Rust - update Rust toolchains and rustup
+  ansible.builtin.command:
+    argv:
+      - '{{ mega_update_rust_rustup.stdout }}'
+      - update
+  register: mega_update_rust_rustup_update
+  changed_when: '"unchanged" not in mega_update_rust_rustup_update.stdout'
+
+- name: Rust - determine cargo executable path
+  ignore_errors: true
+  ansible.builtin.command:
+    argv:
+      - which
+      - cargo
+  register: mega_update_rust_cargo
+  changed_when: mega_update_rust_cargo.rc != 0
+
+- name: Rust - list all installed cargos
+  ansible.builtin.command:
+    argv:
+      - '{{ mega_update_rust_cargo.stdout }}'
+      - install
+      - --list
+  register: mega_update_rust_cargos
+  changed_when: mega_update_rust_cargos.rc != 0
+
+- name: Rust - filter command output
+  ansible.builtin.set_fact:
+    mega_update_rust_cargos: '{{ mega_update_rust_cargos.stdout_lines | json_query("[::2]") | map("split", " ") | map("first") }}' # [::2]: Starting from index zero, choose every 2nd item
+
+- name: Rust - update all installed cargos
+  community.general.cargo:
+    name: '{{ item | split(" ") | first }}'
+    state: latest
+  with_items: '{{ mega_update_rust_cargos }}'
+  when:
+    - 'mega_update_rust_cargos.0 is defined'

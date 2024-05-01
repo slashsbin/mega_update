@@ -25,7 +25,8 @@ Supports
       Tags: `npm`
 - [X] **Phive**: Update [Phive](https://phar.io/) executable and installed phars.
       Tags: `phive`
-- [ ] **Rust**: Rust toolchain and globally installed cargo packages.
+- [X] **Rust**: Update [Rust](https://www.rust-lang.org/) toolchains, rustup and globally installed cargo packages.
+      Tags: `rust`
 - [X] **Snaps**: Referesh all installed [Snaps](https://snapcraft.io/).
       Tags: `snap`
 
@@ -37,10 +38,12 @@ List of used Ansible modules:
 - `ansible.builtin.apt`
 - `ansible.builtin.command`
 - `ansible.builtin.debug`
+- `ansible.builtin.set_fact`
 - `ansible.builtin.stat`
 - `community.docker.docker_host_info`
 - `community.docker.docker_image_info`
 - `community.docker.docker_image`
+- `community.general.cargo`
 - `community.general.composer`
 - `community.general.homebrew_cask`
 - `community.general.homebrew`

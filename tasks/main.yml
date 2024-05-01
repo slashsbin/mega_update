@@ -101,6 +101,24 @@
   import_tasks: phive.yml
   when: mega_update_phive is succeeded
 
+# Rust
+- name: Rust - determine rustup executable path
+  ignore_errors: true
+  tags:
+    - rust
+  ansible.builtin.command:
+    argv:
+      - which
+      - rustup
+  register: mega_update_rust_rustup
+  changed_when: mega_update_rust_rustup.rc != 0
+
+- name: Import Rust Tasks
+  tags:
+    - rust
+  import_tasks: rust.yml
+  when: mega_update_rust_rustup is succeeded
+
 # Snap
 - name: Snap - determine snap executable path
   ignore_errors: true
