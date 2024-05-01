@@ -20,12 +20,13 @@ help:  ## Display this help
 	@echo "";
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z0-9_-]+:.*?##/ { printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' ${MAKEFILE_LIST}
 
+TAGS ?= all
+
 ##@ [App]
 .PHONY: dry-run
 dry-run:  ## Run Mega Update locally (Dry-Run mode, don't make any changes)
 	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check
 
-TAGS ?= all
 .PHONY: run
 run:  ## Run Mega Update locally
 	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags ${TAGS}
@@ -51,7 +52,7 @@ ansible-facts:  ## Print Ansible Facts
 .PHONY: debug-run
 debug-run:  ## Run Mega Update locally (Debug mode, don't make any changes)
 	ANSIBLE_ENABLE_TASK_DEBUGGER=True \
-		ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags all,debug --check --diff --verbose
+		ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags ${TAGS},debug --check --diff --verbose
 
 .PHONY: galaxy-Update
 galaxy-update:  ## Update role on Ansible Galaxy
