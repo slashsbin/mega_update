@@ -25,9 +25,10 @@ help:  ## Display this help
 dry-run:  ## Run Mega Update locally (Dry-Run mode, don't make any changes)
 	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --check
 
+TAGS ?= all
 .PHONY: run
 run:  ## Run Mega Update locally
-	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml
+	ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags ${TAGS}
 
 .PHONY: list-tasks
 list-tasks:  ## List supported tasks and their tags
