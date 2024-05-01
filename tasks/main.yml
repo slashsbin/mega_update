@@ -80,3 +80,21 @@
     - osx
   import_tasks: osx.yml
   when: 'ansible_os_family == "Darwin"'
+
+# Phive
+- name: Phive - determine phive executable path
+  ignore_errors: true
+  tags:
+    - phive
+  ansible.builtin.command:
+    argv:
+      - which
+      - phive.phar
+  register: mega_update_phive
+  changed_when: mega_update_phive.rc != 0
+
+- name: Import Phive Tasks
+  tags:
+    - phive
+  import_tasks: phive.yml
+  when: mega_update_phive is succeeded

@@ -12,23 +12,22 @@ Supports
 --------
 - [X] **APT**: Update all Debian packages to the latest version.
       Tags: `apt`, `cleanup`
-- [ ] **ClamAV**
 - [X] **Composer**: Update [Composer](https://getcomposer.org/) executable and globally installed packages.
       Tags: `composer`
 - [X] **Docker**: Pull latest version of [Docker](https://www.docker.com/) images from repositories.
       Tags: `docker`, `cleanup`
-- [ ] **Exercism CLI**
 - [ ] **Go**
 - [X] **Homebrew**: Upgrade outdated [brews](https://brew.sh/) and casks.
       Tags: `homebrew`, `cleanup`
-- [X] **NPM**: Upgrade globally installed [npm](https://nodejs.org/) packages.
-      Tags: `npm`
 - [X] **macOS**: Update MacOS apps via the official system software update tool cli.
       Tags: `osx`
+- [X] **NPM**: Upgrade globally installed [npm](https://nodejs.org/) packages.
+      Tags: `npm`
+- [X] **Phive**: Update [Phive](https://phar.io/) executable and installed phars.
+      Tags: `phive`
 - [ ] **RKHunter**
 - [ ] **Rust**: Rust toolchain and globally installed cargo packages.
 - [ ] **Snaps**: Referesh all installed Snaps
-- [ ] **Symfony CLI**
 
 Requirements
 ------------

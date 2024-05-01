@@ -1,0 +1,14 @@
+---
+
+- name: Phive - update phive itself to the latest version
+  ansible.builtin.command:
+    argv:
+      - '{{ mega_update_phive.stdout }}'
+      - self-update
+
+- name: Phive - update configured phars
+  ansible.builtin.command:
+    chdir: $HOME
+    argv:
+      - '{{ mega_update_phive.stdout }}'
+      - update
