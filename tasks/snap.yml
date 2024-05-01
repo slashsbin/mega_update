@@ -1,0 +1,10 @@
+---
+
+- name: Snap - refresh all snaps
+  ansible.builtin.command:
+    argv:
+      - '{{ mega_update_snap.stdout }}'
+      - refresh
+  become: true
+  register: mega_update_snap_refresh
+  changed_when: '"All snaps up to date" not in mega_update_snap_refresh.stderr'

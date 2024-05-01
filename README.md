@@ -25,9 +25,9 @@ Supports
       Tags: `npm`
 - [X] **Phive**: Update [Phive](https://phar.io/) executable and installed phars.
       Tags: `phive`
-- [ ] **RKHunter**
 - [ ] **Rust**: Rust toolchain and globally installed cargo packages.
-- [ ] **Snaps**: Referesh all installed Snaps
+- [X] **Snaps**: Referesh all installed [Snaps](https://snapcraft.io/).
+      Tags: `snap`
 
 Requirements
 ------------

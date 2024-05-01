@@ -100,3 +100,21 @@
     - phive
   import_tasks: phive.yml
   when: mega_update_phive is succeeded
+
+# Snap
+- name: Snap - determine snap executable path
+  ignore_errors: true
+  tags:
+    - snap
+  ansible.builtin.command:
+    argv:
+      - which
+      - snap
+  register: mega_update_snap
+  changed_when: mega_update_snap.rc != 0
+
+- name: Import Snap Tasks
+  tags:
+    - snap
+  import_tasks: snap.yml
+  when: mega_update_snap is succeeded
