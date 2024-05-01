@@ -5,6 +5,8 @@
     argv:
       - '{{ mega_update_phive.stdout }}'
       - self-update
+  register: mega_update_phive_selfupdate
+  changed_when: '"You already have the newest" not in mega_update_phive_selfupdate.stdout'
 
 - name: Phive - update configured phars
   ansible.builtin.command:
@@ -12,3 +14,5 @@
     argv:
       - '{{ mega_update_phive.stdout }}'
       - update
+  register: mega_update_phive_update
+  changed_when: mega_update_phive_update.rc != 0
