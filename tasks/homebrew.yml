@@ -11,6 +11,7 @@
 - name: Homebrew cask - upgrade all outdated casks
   community.general.homebrew_cask:
     upgrade_all: true
+  when: 'ansible_os_family == "Darwin"' # Homebrew casks are only supported on macOS
 
 - name: Homebrew - remove outdated downloads
   tags:
