@@ -4,7 +4,7 @@
   ansible.builtin.apt:
     update_cache: true
   become: true
-  ignore_errors: true
+  failed_when: false
 
 - name: APT - update all packages to the latest version
   ansible.builtin.apt:
