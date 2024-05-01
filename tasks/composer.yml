@@ -25,6 +25,7 @@
       - home
   register: mega_update_composer_global_home
   when: mega_update_composer is succeeded
+  changed_when: mega_update_composer_global_home.rc != 0
 
 - name: Composer - check composer global dependencies file exists
   ignore_errors: true

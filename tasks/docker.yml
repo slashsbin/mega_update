@@ -16,4 +16,6 @@
 - name: Docker - prune images
   tags:
     - cleanup
-  ansible.builtin.command: docker image prune -f
+  ansible.builtin.command: docker image prune --force
+  register: mega_update_docker_prune_images
+  changed_when: mega_update_docker_prune_images.rc != 0

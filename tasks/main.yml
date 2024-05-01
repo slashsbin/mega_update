@@ -17,6 +17,7 @@
       - which
       - composer
   register: mega_update_composer
+  changed_when: mega_update_composer.rc != 0
 
 - name: Import Composer Tasks
   tags:
@@ -47,6 +48,7 @@
       - which
       - brew
   register: mega_update_homebrew
+  changed_when: mega_update_homebrew.rc != 0
 
 - name: Import HomeBrew Tasks
   tags:
@@ -64,6 +66,7 @@
       - which
       - npm
   register: mega_update_npm
+  changed_when: mega_update_npm.rc != 0
 
 - name: Import NPM Tasks
   tags:

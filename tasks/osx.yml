@@ -3,3 +3,5 @@
 - name: OSX - software update
   ansible.builtin.command: softwareupdate --install --all
   become: true
+  register: mega_update_osx_update
+  changed_when: mega_update_osx_update.rc != 0

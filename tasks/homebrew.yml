@@ -19,3 +19,5 @@
     argv:
       - '{{ mega_update_homebrew.stdout }}'
       - cleanup
+  register: mega_update_homebrew_cleanup
+  changed_when: mega_update_homebrew_cleanup.rc != 0
