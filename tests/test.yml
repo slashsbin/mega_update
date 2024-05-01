@@ -3,4 +3,4 @@
 - name: Local Test
   hosts: localhost
   roles:
-    - role: ../..
+    - role: 'mega_update'
