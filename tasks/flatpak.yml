@@ -1,0 +1,12 @@
+---
+
+- name: Flatpak - update applications or runetimes
+  ansible.builtin.command:
+    argv:
+      - '{{ mega_update_flatpak.stdout }}'
+      - update
+      - --noninteractive
+      - --assumeyes
+  become: true
+  register: mega_update_flatpak_update
+  changed_when: '"Nothing to do" not in mega_update_flatpak_update.stdout'

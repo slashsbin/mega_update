@@ -16,6 +16,8 @@ Supports
       Tags: `composer`
 - [X] **Docker**: Pull latest version of [Docker](https://www.docker.com/) images from repositories.
       Tags: `docker`, `cleanup`
+- [X] **Flatpak**: Update all system-wide installed [flatpaks](https://www.flatpak.org/), including applications and runtimes.
+      Tags: `flatpak`
 - [X] **Homebrew**: Upgrade outdated [brews](https://brew.sh/) and casks.
       Tags: `homebrew`, `cleanup`
 - [X] **macOS**: Update MacOS apps via the official system software update tool cli.

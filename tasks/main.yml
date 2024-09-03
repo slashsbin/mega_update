@@ -40,6 +40,24 @@
   import_tasks: docker.yml
   when: 'not mega_update_docker_host.failed'
 
+# Flatpak
+- name: Flatpak - determine flatpak executable path
+  ignore_errors: true
+  tags:
+    - flatpak
+  ansible.builtin.command:
+    argv:
+      - which
+      - flatpak
+  register: mega_update_flatpak
+  changed_when: mega_update_flatpak.rc != 0
+
+- name: Import Flatpak Tasks
+  tags:
+    - flatpak
+  import_tasks: flatpak.yml
+  when: mega_update_flatpak is succeeded
+
 # HomeBrew
 - name: Homebrew - determine homebrew executable path
   ignore_errors: true

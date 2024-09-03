@@ -54,6 +54,6 @@ debug-run:  ## Run Mega Update locally (Debug mode, will make changes!)
 	ANSIBLE_ENABLE_TASK_DEBUGGER=True \
 		ansible-playbook --inventory tests/inventory --ask-become-pass tests/test.yml --tags ${TAGS},debug --diff --verbose
 
-.PHONY: galaxy-Update
+.PHONY: galaxy-update
 galaxy-update:  ## Update role on Ansible Galaxy
 	ansible-galaxy role import slashsbin mega_update
