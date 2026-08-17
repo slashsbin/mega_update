@@ -130,4 +130,4 @@ The Code is licensed under the [MIT License](https://slashsbin.mit-license.org/)
 Author Information
 ------------------
 
-This role was created by [Mohammad Shokri Khanqah](https://slashsbin.dev/).
+This role was created by [Mohammad Khanghah](https://slashsbin.dev/).
